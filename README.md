@@ -39,6 +39,7 @@ p1.post_categories.set("3")
 
 
 #Создать как минимум 4 комментария к разным объектам модели Post (в каждом объекте должен быть как минимум один комментарий).
+
 c1 = Comments.objects.create(comment="1 comment from First", post=p5, user=u1)
 c2 = Comments.objects.create(comment="2 comment from First", post=p6, user=u1)
 c3 = Comments.objects.create(comment="1 comment from Second", post=p1, user=u2)
