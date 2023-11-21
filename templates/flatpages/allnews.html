@@ -1,0 +1,43 @@
+{% extends 'flatpages/default.html' %}
+
+
+
+{% block title %}
+Все новости
+{% endblock title %}
+
+
+
+{% block content %}
+
+
+    <section class="info_service">
+
+        <div class="container">
+            <div class="row sub_content">
+                <h2>Новости списком</h2>
+                <div class="rs_box">
+                    {% for post in allnews %}
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                        <div class="serviceBox_1">
+                            <div class="icon_service">
+                                <i class="fa fa-laptop"></i>
+                                <h3><a href="/news/{{post.id}}" >{{ post.name |truncatechars:20}}</a></h3>
+                            </div>
+                            <div class="fr_content">
+                                <p>{{ post.text |truncatechars:40 }}</p>
+                                <p>{{ post.post_date }}</p>
+                                <a class="read" href="/news/{{post.id}}">Read more</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+
+        </div>
+
+    </section>
+
+    {% endblock content %}
